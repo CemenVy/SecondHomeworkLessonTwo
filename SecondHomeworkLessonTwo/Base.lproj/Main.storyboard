@@ -22,21 +22,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-cm-SkX">
                                         <rect key="frame" x="101.33333333333333" y="0.0" width="158.33333333333337" height="531"/>
                                         <subviews>
-                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZM-AV-DsR">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZM-AV-DsR">
                                                 <rect key="frame" x="0.0" y="0.0" width="158.33333333333334" height="158.33333333333334"/>
                                                 <color key="backgroundColor" red="0.92265683409999999" green="0.033870704109999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qZM-AV-DsR" secondAttribute="height" multiplier="1:1" id="wkM-gS-yhj"/>
                                                 </constraints>
                                             </view>
-                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-So-HtM">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-So-HtM">
                                                 <rect key="frame" x="0.0" y="186.33333333333331" width="158.33333333333334" height="158.33333333333331"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="jxy-So-HtM" secondAttribute="height" multiplier="1:1" id="AbS-Z7-pf2"/>
                                                 </constraints>
                                             </view>
-                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btw-aV-B9f">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btw-aV-B9f">
                                                 <rect key="frame" x="0.0" y="372.66666666666669" width="158.33333333333334" height="158.33333333333331"/>
                                                 <color key="backgroundColor" red="0.059405097640000001" green="0.80796021220000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -46,10 +46,10 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgW-fv-na8">
-                                        <rect key="frame" x="49" y="631" width="263" height="58"/>
+                                        <rect key="frame" x="80.666666666666686" y="631" width="200" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="DQo-xn-a9c"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="263" id="YBa-L8-o21"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="YBa-L8-o21"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="Button"/>
@@ -57,7 +57,7 @@
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="signalSwitchingButton:" destination="5oZ-AV-NhE" eventType="touchUpInside" id="yLk-eN-G9Y"/>
+                                            <action selector="signalSwitchingButtonDidTapped:" destination="5oZ-AV-NhE" eventType="touchUpInside" id="FFG-uO-xfK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -74,7 +74,7 @@
                     </view>
                     <connections>
                         <outlet property="greenSignalView" destination="Btw-aV-B9f" id="Zmt-Lt-qRJ"/>
-                        <outlet property="redSignalView" destination="qZM-AV-DsR" id="hm7-XR-k4r"/>
+                        <outlet property="redSignalView" destination="qZM-AV-DsR" id="CfE-Jp-z0Q"/>
                         <outlet property="yellowSignalView" destination="jxy-So-HtM" id="4Mg-YU-Hge"/>
                     </connections>
                 </viewController>
