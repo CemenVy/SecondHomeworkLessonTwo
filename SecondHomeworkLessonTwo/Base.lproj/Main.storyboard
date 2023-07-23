@@ -47,17 +47,19 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgW-fv-na8">
                                         <rect key="frame" x="80.666666666666686" y="631" width="200" height="58"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="DQo-xn-a9c"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="YBa-L8-o21"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="tintColor" systemColor="systemBlueColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="START" subtitle="">
-                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="START">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="signalSwitchingButtonDidTapped:" destination="5oZ-AV-NhE" eventType="touchUpInside" id="FFG-uO-xfK"/>
+                                            <action selector="signalSwitchingButtonDidTapped" destination="5oZ-AV-NhE" eventType="touchUpInside" id="kBF-tG-0eI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,6 +77,7 @@
                     <connections>
                         <outlet property="greenSignalView" destination="Btw-aV-B9f" id="Zmt-Lt-qRJ"/>
                         <outlet property="redSignalView" destination="qZM-AV-DsR" id="CfE-Jp-z0Q"/>
+                        <outlet property="signalSwitchingButton" destination="kgW-fv-na8" id="gag-pw-ptD"/>
                         <outlet property="yellowSignalView" destination="jxy-So-HtM" id="4Mg-YU-Hge"/>
                     </connections>
                 </viewController>
@@ -84,6 +87,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
