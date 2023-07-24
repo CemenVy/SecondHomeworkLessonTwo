@@ -12,43 +12,54 @@ final class ViewController: UIViewController {
     @IBOutlet private var redSignalView: UIView!
     @IBOutlet private var yellowSignalView: UIView!
     @IBOutlet private var greenSignalView: UIView!
+    
     @IBOutlet private var signalSwitchingButton: UIButton!
     
-    private var switchingAmountButton = 0
+    private var currentColorSignal = CurrentLightSignal.red
+    private let signalIsOn: CGFloat = 1
+    private let signalIsOff: CGFloat = 0.3
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        redSignalView.alpha = 0.3
-        yellowSignalView.alpha = 0.3
-        greenSignalView.alpha = 0.3
-        
-        redSignalView.layer.cornerRadius = redSignalView.bounds.width / 2.0
-        yellowSignalView.layer.cornerRadius = redSignalView.bounds.width / 2.0
-        greenSignalView.layer.cornerRadius = redSignalView.bounds.width / 2.0
         
         signalSwitchingButton.layer.cornerRadius = 10
+        
+        redSignalView.alpha = signalIsOff
+        yellowSignalView.alpha = signalIsOff
+        greenSignalView.alpha = signalIsOff
+    }
+    
+    override func viewWillLayoutSubviews() {
+        redSignalView.layer.cornerRadius = redSignalView.frame.width / 2
+        yellowSignalView.layer.cornerRadius = yellowSignalView.frame.width / 2
+        greenSignalView.layer.cornerRadius = greenSignalView.frame.width / 2
     }
     
     @IBAction private func signalSwitchingButtonDidTapped() {
-        
-        if switchingAmountButton == 0 {
-            redSignalView.alpha = 1.0
+        if signalSwitchingButton.currentTitle == "START" {
             signalSwitchingButton.setTitle("NEXT", for: .normal)
-            switchingAmountButton += 1
-        } else if switchingAmountButton == 1 {
-            redSignalView.alpha = 0.3
-            yellowSignalView.alpha = 1.0
-            switchingAmountButton += 1
-        } else if switchingAmountButton == 2 {
-            yellowSignalView.alpha = 0.3
-            greenSignalView.alpha = 1.0
-            switchingAmountButton += 1
-        } else {
-            greenSignalView.alpha = 0.3
-            redSignalView.alpha = 1.0
-            switchingAmountButton = 1
+        }
+        
+        switch currentColorSignal {
+        case .red:
+            greenSignalView.alpha = signalIsOff
+            redSignalView.alpha = signalIsOn
+            currentColorSignal = .yellow
+        case .yellow:
+            redSignalView.alpha = signalIsOff
+            yellowSignalView.alpha = signalIsOn
+            currentColorSignal = .green
+        case .green:
+            yellowSignalView.alpha = signalIsOff
+            greenSignalView.alpha = signalIsOn
+            currentColorSignal = .red
         }
     }
-
 }
 
+// MARK: - CurrentLight
+extension ViewController {
+    private enum CurrentLightSignal {
+        case red, yellow, green
+    }
+}
